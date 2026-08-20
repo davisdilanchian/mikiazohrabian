@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome to Steam</title>
+  <title>Welcome to Screan</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="global-header">
-    <div class="brand" aria-label="Steam">
+    <div class="brand" aria-label="Screan">
       <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="16" cy="16" r="15" fill="#171a21" stroke="#c7d5e0" stroke-width="1.4"/>
         <circle cx="11" cy="21" r="5.2" fill="#c7d5e0"/>
@@ -17,7 +17,7 @@
         <circle cx="21.5" cy="11.5" r="2" fill="#171a21"/>
         <path d="M14.6 18.2 L20.2 13.4" stroke="#c7d5e0" stroke-width="2.4" stroke-linecap="round"/>
       </svg>
-      STEAM
+      SCREAN
     </div>
     <nav class="global-nav">
       <a href="#" class="active">STORE</a>
@@ -26,12 +26,12 @@
       <a href="#">SUPPORT</a>
     </nav>
     <div class="header-right">
-      <button class="install-btn" type="button">Install Steam</button>
+      <button class="install-btn" type="button">Install Screan</button>
       <div class="header-links">
         <span>Cart (0)</span>
         <span class="sep">|</span>
         <div class="user-menu">
-          <img src="covers/mikia-game.png" alt="" />
+          <img src="covers/mikia-game.png?v=4" alt="" />
           <span class="uname">mikia</span>
           <span class="caret">▼</span>
         </div>
@@ -98,10 +98,10 @@
 
       <aside class="col-side">
         <div class="side-box">
-          <h3>Steam Gift Cards</h3>
+          <h3>Screan Gift Cards</h3>
           <div class="gift-art"><span>GIFT CARDS</span></div>
           <p>Give the Gift of Game</p>
-          <p style="color:#8f98a0;margin-top:4px;font-size:12px;">Now available on Steam — the perfect present for the person who already owns too many games.</p>
+          <p style="color:#8f98a0;margin-top:4px;font-size:12px;">Now available on Screan — the perfect present for the person who already owns too many games.</p>
           <span class="cta">Learn more</span>
         </div>
         <div class="side-box">
@@ -119,28 +119,28 @@
         <div class="side-box">
           <h3>Recommended by Friends</h3>
           <div class="friend" data-id="jon-bullet-hell">
-            <img src="covers/jon-bullet-hell.png" alt="" loading="lazy" />
+            <img src="covers/jon-bullet-hell.png?v=4" alt="" loading="lazy" />
             <div>
               <div class="who">jon</div>
               <div class="what">recently played Some Bullshit Game Jon Likes</div>
             </div>
           </div>
           <div class="friend" data-id="nicole-is-playing">
-            <img src="covers/nicole-is-playing.png" alt="" loading="lazy" />
+            <img src="covers/nicole-is-playing.png?v=4" alt="" loading="lazy" />
             <div>
               <div class="who">nicole</div>
               <div class="what">recommends Nicole Is Playing This Probably</div>
             </div>
           </div>
           <div class="friend" data-id="mikia-game">
-            <img src="covers/mikia-game.png" alt="" loading="lazy" />
+            <img src="covers/mikia-game.png?v=4" alt="" loading="lazy" />
             <div>
               <div class="who">mikia</div>
               <div class="what">featured A Walk Through an Unnamed Ship</div>
             </div>
           </div>
           <div class="friend" data-id="guccis-big-adventure">
-            <img src="covers/guccis-big-adventure.png" alt="" loading="lazy" />
+            <img src="covers/guccis-big-adventure.png?v=4" alt="" loading="lazy" />
             <div>
               <div class="who">gucci</div>
               <div class="what">is a ball python, also a game now</div>
@@ -159,11 +159,11 @@
       <div class="links">
         <a href="#">Privacy Policy</a>
         <a href="#">Legal</a>
-        <a href="#">Steam Subscriber Agreement</a>
+        <a href="#">Screan Subscriber Agreement</a>
         <a href="#">Refunds</a>
         <a href="#">Cookies</a>
       </div>
-      <p class="disclaimer">Parody storefront. Not affiliated with Valve, Steam, or anyone who would send a cease-and-desist. Built for Mikia.</p>
+      <p class="disclaimer">Parody storefront. Not affiliated with Valve or Steam. This is Screan. Built for Mikia.</p>
     </div>
   </footer>
 
@@ -327,7 +327,7 @@
     ];
 
     const byId = Object.fromEntries(games.map(g => [g.id, g]));
-    const src = g => "covers/" + g.file;
+    const src = g => "covers/" + g.file + "?v=4";
     const money = n => n === 0 ? "Free to Play" : "$" + n.toFixed(2);
     const salePrice = g => g.discount ? +(g.price * (1 - g.discount.pct / 100)).toFixed(2) : g.price;
 
@@ -387,8 +387,9 @@
       art.innerHTML = featuredIds.map((id, i) => {
         const gg = byId[id];
         const eager = i === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
-        return `<img class="${i === featIndex ? "show" : ""}" src="${src(gg)}" alt="${gg.title}" ${eager} data-id="${gg.id}" />`;
+        return `<img class="${i === featIndex ? "show" : ""}" src="${src(gg)}" alt="${gg.title}" ${eager} />`;
       }).join("");
+      art.dataset.id = g.id;
       art.onclick = () => openGame(g.id);
 
       const now = salePrice(g);
@@ -412,6 +413,7 @@
           <span class="win-icons" title="Windows">▭</span>
         </div>
       `;
+      info.dataset.id = g.id;
       info.querySelector("h3").onclick = () => openGame(g.id);
 
       document.querySelectorAll("#featDots button").forEach((b, i) => {
