@@ -31,7 +31,7 @@
         <span>Cart (0)</span>
         <span class="sep">|</span>
         <div class="user-menu">
-          <img src="covers/mikia-game.png?v=4" alt="" />
+          <img src="covers/mikia-game.png?v=5" alt="" />
           <span class="uname">mikia</span>
           <span class="caret">▼</span>
         </div>
@@ -119,28 +119,28 @@
         <div class="side-box">
           <h3>Recommended by Friends</h3>
           <div class="friend" data-id="jon-bullet-hell">
-            <img src="covers/jon-bullet-hell.png?v=4" alt="" loading="lazy" />
+            <img src="covers/jon-bullet-hell.png?v=5" alt="" loading="lazy" />
             <div>
               <div class="who">jon</div>
               <div class="what">recently played Some Bullshit Game Jon Likes</div>
             </div>
           </div>
           <div class="friend" data-id="nicole-is-playing">
-            <img src="covers/nicole-is-playing.png?v=4" alt="" loading="lazy" />
+            <img src="covers/nicole-is-playing.png?v=5" alt="" loading="lazy" />
             <div>
               <div class="who">nicole</div>
               <div class="what">recommends Nicole Is Playing This Probably</div>
             </div>
           </div>
           <div class="friend" data-id="mikia-game">
-            <img src="covers/mikia-game.png?v=4" alt="" loading="lazy" />
+            <img src="covers/mikia-game.png?v=5" alt="" loading="lazy" />
             <div>
               <div class="who">mikia</div>
               <div class="what">featured A Walk Through an Unnamed Ship</div>
             </div>
           </div>
           <div class="friend" data-id="guccis-big-adventure">
-            <img src="covers/guccis-big-adventure.png?v=4" alt="" loading="lazy" />
+            <img src="covers/guccis-big-adventure.png?v=5" alt="" loading="lazy" />
             <div>
               <div class="who">gucci</div>
               <div class="what">is a ball python, also a game now</div>
@@ -327,7 +327,7 @@
     ];
 
     const byId = Object.fromEntries(games.map(g => [g.id, g]));
-    const src = g => "covers/" + g.file + "?v=4";
+    const src = g => "covers/" + g.file + "?v=5";
     const money = n => n === 0 ? "Free to Play" : "$" + n.toFixed(2);
     const salePrice = g => g.discount ? +(g.price * (1 - g.discount.pct / 100)).toFixed(2) : g.price;
 
