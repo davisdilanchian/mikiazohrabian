@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Steam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="global-header">
+    <div class="brand" aria-label="Steam">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" fill="#171a21" stroke="#c7d5e0" stroke-width="1.4"/>
+        <circle cx="11" cy="21" r="5.2" fill="#c7d5e0"/>
+        <circle cx="11" cy="21" r="2.4" fill="#171a21"/>
+        <circle cx="21.5" cy="11.5" r="4.4" fill="#c7d5e0"/>
+        <circle cx="21.5" cy="11.5" r="2" fill="#171a21"/>
+        <path d="M14.6 18.2 L20.2 13.4" stroke="#c7d5e0" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      STEAM
+    </div>
+    <nav class="global-nav">
+      <a href="#" class="active">STORE</a>
+      <a href="#">COMMUNITY</a>
+      <a href="#">ABOUT</a>
+      <a href="#">SUPPORT</a>
+    </nav>
+    <div class="header-right">
+      <button class="install-btn" type="button">Install Steam</button>
+      <div class="header-links">
+        <span>Cart (0)</span>
+        <span class="sep">|</span>
+        <div class="user-menu">
+          <img src="covers/mikia-game.png" alt="" />
+          <span class="uname">mikia</span>
+          <span class="caret">▼</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="store-nav-wrap">
+    <nav class="store-nav">
+      <a href="#" class="on">Home</a>
+      <a href="#">Discovery Queue</a>
+      <a href="#">Wishlist</a>
+      <a href="#">Points Shop</a>
+      <a href="#">News</a>
+      <a href="#">Charts</a>
+      <form class="store-search" action="#" onsubmit="return false;">
+        <input id="search" type="search" placeholder="search the store" autocomplete="off" />
+        <button type="submit" aria-label="Search">⌕</button>
+      </form>
+    </nav>
+  </div>
+
+  <div class="hero-wash" id="heroWash"></div>
+
+  <div class="page">
+    <h2 class="sec-title">Featured &amp; Recommended</h2>
+    <div class="carousel" id="carousel">
+      <button class="car-btn prev" type="button" id="prevFeat" aria-label="Previous">‹</button>
+      <button class="car-btn next" type="button" id="nextFeat" aria-label="Next">›</button>
+      <div class="carousel-inner">
+        <div class="feat-art" id="featArt"></div>
+        <div class="feat-info" id="featInfo"></div>
+      </div>
+    </div>
+    <div class="car-dots" id="featDots"></div>
+
+    <h2 class="sec-title">Special Offers <span class="see">See more:</span></h2>
+    <div class="specials" id="specials"></div>
+
+    <div class="columns">
+      <div class="col-main">
+        <div class="pills" id="pills">
+          <button type="button" class="on" data-tab="trending">New &amp; Trending</button>
+          <button type="button" data-tab="sellers">Top Sellers</button>
+          <button type="button" data-tab="upcoming">Popular Upcoming</button>
+          <button type="button" data-tab="specials">Specials</button>
+        </div>
+        <div class="row-wrap">
+          <button class="row-arrow l" type="button" data-row="tabRow" data-dir="-1">‹</button>
+          <button class="row-arrow r" type="button" data-row="tabRow" data-dir="1">›</button>
+          <div class="scroll-row" id="tabRow"></div>
+        </div>
+
+        <h2 class="sec-title">Top Sellers</h2>
+        <ol class="top-sellers" id="topSellers"></ol>
+
+        <h2 class="sec-title">Under $10 <span class="see">See more: Under $5</span></h2>
+        <div class="row-wrap">
+          <button class="row-arrow l" type="button" data-row="under10" data-dir="-1">‹</button>
+          <button class="row-arrow r" type="button" data-row="under10" data-dir="1">›</button>
+          <div class="scroll-row" id="under10"></div>
+        </div>
+      </div>
+
+      <aside class="col-side">
+        <div class="side-box">
+          <h3>Steam Gift Cards</h3>
+          <div class="gift-art"><span>GIFT CARDS</span></div>
+          <p>Give the Gift of Game</p>
+          <p style="color:#8f98a0;margin-top:4px;font-size:12px;">Now available on Steam — the perfect present for the person who already owns too many games.</p>
+          <span class="cta">Learn more</span>
+        </div>
+        <div class="side-box">
+          <h3>Browse by category</h3>
+          <div class="cats">
+            <a href="#">Action</a>
+            <a href="#">Casual</a>
+            <a href="#">Indie</a>
+            <a href="#">Racing</a>
+            <a href="#">RPG</a>
+            <a href="#">Simulation</a>
+            <a href="#">Sports</a>
+          </div>
+        </div>
+        <div class="side-box">
+          <h3>Recommended by Friends</h3>
+          <div class="friend" data-id="jon-bullet-hell">
+            <img src="covers/jon-bullet-hell.png" alt="" loading="lazy" />
+            <div>
+              <div class="who">jon</div>
+              <div class="what">recently played Some Bullshit Game Jon Likes</div>
+            </div>
+          </div>
+          <div class="friend" data-id="nicole-is-playing">
+            <img src="covers/nicole-is-playing.png" alt="" loading="lazy" />
+            <div>
+              <div class="who">nicole</div>
+              <div class="what">recommends Nicole Is Playing This Probably</div>
+            </div>
+          </div>
+          <div class="friend" data-id="mikia-game">
+            <img src="covers/mikia-game.png" alt="" loading="lazy" />
+            <div>
+              <div class="who">mikia</div>
+              <div class="what">featured Mikia Game — cartoon-pinup fantasy</div>
+            </div>
+          </div>
+          <div class="friend" data-id="guccis-big-adventure">
+            <img src="covers/guccis-big-adventure.png" alt="" loading="lazy" />
+            <div>
+              <div class="who">gucci</div>
+              <div class="what">is a ball python, also a game now</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="valve">VALVE</div>
+      <p>© 2026 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.</p>
+      <p>VAT included in all prices where applicable.</p>
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Legal</a>
+        <a href="#">Steam Subscriber Agreement</a>
+        <a href="#">Refunds</a>
+        <a href="#">Cookies</a>
+      </div>
+      <p class="disclaimer">Parody storefront. Not affiliated with Valve, Steam, or anyone who would send a cease-and-desist. Built for Mikia.</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true">
+    <div class="storepage">
+      <button class="close" id="close" type="button" aria-label="Close">&times;</button>
+      <div class="sp-top">
+        <span class="crumb">All Games &gt; <span id="sp-cat">Indie</span></span>
+      </div>
+      <div class="sp-top" style="padding-top:0;">
+        <h2 id="sp-title"></h2>
+      </div>
+      <div class="sp-grid">
+        <img id="sp-img" alt="" />
+        <div class="sp-body">
+          <div class="tags" id="sp-tags"></div>
+          <div class="rev" id="sp-rev"></div>
+          <p class="blurb" id="sp-blurb"></p>
+          <div class="buy-box">
+            <div class="buy-label" id="sp-buy-label">Buy this game</div>
+            <div class="buy-row">
+              <span class="price" id="sp-price"></span>
+              <button class="btn-wish" type="button" id="btnWish">Add to Wishlist</button>
+              <button class="btn-cart" type="button" id="btnCart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hoverinfo" id="hoverinfo"></div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const games = [
+      {
+        id: "guccis-big-adventure", file: "guccis-big-adventure.png",
+        title: "Gucci's Big Adventure",
+        blurb: "A ball python goes on an adventure.",
+        price: 9.99, tags: ["Adventure", "Cute", "Casual"],
+        review: "Very Positive", pct: 91, count: "2,104",
+        quote: "He is just a little guy. I would die for him."
+      },
+      {
+        id: "dark-souls-worse-edition", file: "dark-souls-worse-edition.png",
+        title: "Dark Souls: Worse Edition",
+        blurb: "A worse version of Dark Souls that sucks.",
+        price: 59.99, tags: ["Action", "Souls-like", "Difficult"],
+        review: "Mostly Negative", pct: 28, count: "48,112",
+        quote: "They made it worse on purpose and then charged sixty dollars."
+      },
+      {
+        id: "armenia-world-5", file: "armenia-world-5.png",
+        title: "Armenia-World 5: Too Many Armenians",
+        blurb: "A pixelated map of Glendale.",
+        price: 14.99, tags: ["Strategy", "Simulation", "Indie"],
+        review: "Overwhelmingly Positive", pct: 97, count: "8,441",
+        quote: "Finally, a 4X game set entirely on Brand Blvd."
+      },
+      {
+        id: "jon-bullet-hell", file: "jon-bullet-hell.png",
+        title: "Some Bullshit Game Jon Likes",
+        blurb: "Top-down bullet hell nonsense.",
+        price: 4.99, tags: ["Action", "Bullet Hell", "Arcade"],
+        review: "Mixed", pct: 64, count: "1,902",
+        quote: "Jon will not shut up about this. The game is fine."
+      },
+      {
+        id: "dustin-game", file: "dustin-game.png",
+        title: "Dustin Game",
+        blurb: "Extremely overcomplicated.",
+        price: 79.99, tags: ["Simulation", "Strategy", "Difficult"],
+        review: "Mostly Positive", pct: 72, count: "3,330",
+        quote: "I have 400 hours and still don't understand the tutorial.",
+        discount: { pct: 90, label: "MIDWEEK MADNESS" }
+      },
+      {
+        id: "dan-game", file: "dan-game.png",
+        title: "Dan Game",
+        blurb: "Ugly corporate horror. Cruelty Squad energy.",
+        price: 19.99, tags: ["Horror", "Indie", "Immersive Sim"],
+        review: "Very Positive", pct: 89, count: "6,218",
+        quote: "My eyes hurt. I am going to keep playing.",
+        discount: { pct: 50, label: "SPECIAL OFFER" }
+      },
+      {
+        id: "nicole-is-playing", file: "nicole-is-playing.png",
+        title: "Nicole Is Playing This Probably",
+        blurb: "Two anime guys. You know.",
+        price: 29.99, tags: ["Anime", "Romance", "Visual Novel"],
+        review: "Overwhelmingly Positive", pct: 96, count: "21,007",
+        quote: "She said it was for the story. It was not for the story."
+      },
+      {
+        id: "james", file: "james.png",
+        title: "JAMES",
+        blurb: "A car going fast.",
+        price: 39.99, tags: ["Racing", "Action", "Sports"],
+        review: "Very Positive", pct: 88, count: "9,540",
+        quote: "The car is named James. The game is named JAMES. 10/10.",
+        discount: { pct: 75, label: "WEEKEND DEAL" }
+      },
+      {
+        id: "tyler-the-movie-the-game", file: "tyler-the-movie-the-game.png",
+        title: "Tyler: The Movie: The Game",
+        blurb: "It is a Brazilian flag.",
+        price: 0.99, tags: ["Casual", "Indie", "Movie"],
+        review: "Mixed", pct: 51, count: "774",
+        quote: "I thought there would be a movie. There is a flag."
+      },
+      {
+        id: "fallout-new-vegas-2", file: "fallout-new-vegas-2.png",
+        title: "Fallout New Vegas: 2",
+        blurb: "its not as good.",
+        price: 49.99, tags: ["RPG", "Open World", "Post-apocalyptic"],
+        review: "Mostly Positive", pct: 78, count: "33,190",
+        quote: "They tried. New Vegas already happened. You cannot do it again."
+      },
+      {
+        id: "the-game-that-makes-you-trans", file: "the-game-that-makes-you-trans.png",
+        title: "The Game That Makes You Trans",
+        blurb: "It's just Disco Elysium.",
+        price: 39.99, tags: ["RPG", "Story Rich", "Choices Matter"],
+        review: "Overwhelmingly Positive", pct: 98, count: "54,882",
+        quote: "I sat down to tax a district and stood up a different person."
+      },
+      {
+        id: "machiavelli-dating-sim", file: "machiavelli-dating-sim.png",
+        title: "Machiavelli Dating Simulator",
+        blurb: "will u be his perfect prince?",
+        price: 14.99, tags: ["Dating Sim", "RPG", "Romance"],
+        review: "Very Positive", pct: 93, count: "4,166",
+        quote: "He asked if I feared more to be loved or to be feared. I said yes."
+      },
+      {
+        id: "mikia-game", file: "mikia-game.png",
+        title: "Mikia Game",
+        blurb: "Cartoon-pinup fantasy.",
+        price: 19.99, tags: ["Anime", "RPG", "Nudity"],
+        review: "Overwhelmingly Positive", pct: 94, count: "12,847",
+        quote: "I bought this for the plot. There is no plot. 10/10."
+      },
+      {
+        id: "british-tv-show-showdown", file: "british-tv-show-showdown.png",
+        title: "British TV Show: Showdown",
+        blurb: "A fighting game on a boring British panel show.",
+        price: 12.99, tags: ["Fighting", "Comedy", "Multiplayer"],
+        review: "Mostly Positive", pct: 76, count: "1,455",
+        quote: "Hadouken, then a two-minute pause for tea and a smug remark.",
+        discount: { pct: 33, label: "WEEKEND DEAL" }
+      },
+      {
+        id: "aidas-ice-cream-mania", file: "aidas-ice-cream-mania.png",
+        title: "Aida's Ice Cream Mania",
+        blurb: "A cartoon woman serving you too much ice cream. Puzzle game.",
+        price: 0, tags: ["Casual", "Puzzle", "Free to Play"],
+        review: "Very Positive", pct: 87, count: "5,902",
+        quote: "She will not stop scooping. There is no win condition. I am sticky."
+      }
+    ];
+
+    const byId = Object.fromEntries(games.map(g => [g.id, g]));
+    const src = g => "covers/" + g.file;
+    const money = n => n === 0 ? "Free to Play" : "$" + n.toFixed(2);
+    const salePrice = g => g.discount ? +(g.price * (1 - g.discount.pct / 100)).toFixed(2) : g.price;
+
+    const featuredIds = [
+      "mikia-game",
+      "dark-souls-worse-edition",
+      "nicole-is-playing",
+      "fallout-new-vegas-2",
+      "the-game-that-makes-you-trans"
+    ];
+    const specialIds = ["dustin-game", "james", "dan-game", "british-tv-show-showdown"];
+    const topIds = [
+      "mikia-game", "nicole-is-playing", "the-game-that-makes-you-trans",
+      "dark-souls-worse-edition", "fallout-new-vegas-2", "machiavelli-dating-sim",
+      "dan-game", "james", "guccis-big-adventure", "dustin-game"
+    ];
+    const under10Ids = games.filter(g => salePrice(g) < 10).map(g => g.id);
+    const upcomingIds = ["armenia-world-5", "british-tv-show-showdown", "tyler-the-movie-the-game", "dustin-game", "machiavelli-dating-sim"];
+
+    const tabSets = {
+      trending: games.map(g => g.id),
+      sellers: topIds,
+      upcoming: upcomingIds,
+      specials: specialIds
+    };
+
+    let featIndex = 0;
+    let featTimer = null;
+
+    function discHTML(g) {
+      if (!g.discount) return `<span class="pr${g.price === 0 ? " free" : ""}">${money(g.price)}</span>`;
+      const now = salePrice(g);
+      return `<div class="disc-row">
+        <div class="disc-pct">-${g.discount.pct}%</div>
+        <div class="disc-prices"><span class="was">${money(g.price)}</span><span class="now">${money(now)}</span></div>
+      </div>`;
+    }
+
+    function capsule(id, lazy = true) {
+      const g = byId[id];
+      const pr = g.discount
+        ? `<span class="pr">${money(salePrice(g))}</span>`
+        : `<span class="pr${g.price === 0 ? " free" : ""}">${money(g.price)}</span>`;
+      return `<article class="capsule" data-id="${g.id}">
+        <img src="${src(g)}" alt="${g.title}" ${lazy ? 'loading="lazy"' : ""} />
+        <div class="meta"><h4>${g.title}</h4>${pr}</div>
+      </article>`;
+    }
+
+    function renderFeatured() {
+      const g = byId[featuredIds[featIndex]];
+      const art = document.getElementById("featArt");
+      const info = document.getElementById("featInfo");
+      const wash = document.getElementById("heroWash");
+      wash.style.backgroundImage = `url("${src(g)}")`;
+
+      art.innerHTML = featuredIds.map((id, i) => {
+        const gg = byId[id];
+        const eager = i === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
+        return `<img class="${i === featIndex ? "show" : ""}" src="${src(gg)}" alt="${gg.title}" ${eager} data-id="${gg.id}" />`;
+      }).join("");
+      art.onclick = () => openGame(g.id);
+
+      const now = salePrice(g);
+      const priceBit = g.discount
+        ? `<span class="price"><span class="was">${money(g.price)}</span>${money(now)}</span>`
+        : `<span class="price${g.price === 0 ? " free" : ""}">${money(g.price)}</span>`;
+
+      info.innerHTML = `
+        <h3 data-id="${g.id}">${g.title}</h3>
+        <div class="feat-thumbs">
+          ${[0,1,2,3].map(() => `<span><img src="${src(g)}" alt=""></span>`).join("")}
+        </div>
+        <div class="tags">${g.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+        <div class="review-block">
+          <div class="label">Overall user reviews:</div>
+          <div><span class="verdict">${g.review}</span> <span class="count">(${g.pct}% of ${g.count})</span></div>
+          <div class="quote">“${g.quote}”</div>
+        </div>
+        <div class="feat-bottom">
+          ${priceBit}
+          <span class="win-icons" title="Windows">▭</span>
+        </div>
+      `;
+      info.querySelector("h3").onclick = () => openGame(g.id);
+
+      document.querySelectorAll("#featDots button").forEach((b, i) => {
+        b.classList.toggle("on", i === featIndex);
+      });
+    }
+
+    function setupDots() {
+      document.getElementById("featDots").innerHTML = featuredIds.map((id, i) => {
+        const g = byId[id];
+        return `<button type="button" class="${i === 0 ? "on" : ""}" data-i="${i}" aria-label="${g.title}">
+          <img src="${src(g)}" alt="${g.title}" loading="lazy" />
+        </button>`;
+      }).join("");
+    }
+
+    function shiftFeat(d) {
+      featIndex = (featIndex + d + featuredIds.length) % featuredIds.length;
+      renderFeatured();
+      restartTimer();
+    }
+    function restartTimer() {
+      clearInterval(featTimer);
+      featTimer = setInterval(() => shiftFeat(1), 7000);
+    }
+
+    document.getElementById("specials").innerHTML = specialIds.map(id => {
+      const g = byId[id];
+      const week = g.discount && g.discount.label.indexOf("WEEKEND") !== -1;
+      return `<article class="offer" data-id="${g.id}">
+        <div class="banner${week ? " week" : ""}">${g.discount.label}</div>
+        <img src="${src(g)}" alt="${g.title}" loading="lazy" />
+        <div class="cap">
+          <span class="t">${g.title}</span>
+          ${discHTML(g)}
+        </div>
+      </article>`;
+    }).join("");
+
+    function fillRow(el, ids) {
+      el.innerHTML = ids.map(id => capsule(id)).join("");
+    }
+    fillRow(document.getElementById("tabRow"), tabSets.trending);
+    fillRow(document.getElementById("under10"), under10Ids);
+
+    document.getElementById("topSellers").innerHTML = topIds.map((id, i) => {
+      const g = byId[id];
+      const p = g.discount ? salePrice(g) : g.price;
+      return `<li data-id="${g.id}">
+        <span class="rank">${i + 1}</span>
+        <span class="ts-art"><img src="${src(g)}" alt="${g.title}" loading="lazy" /></span>
+        <span class="nm">${g.title}</span>
+        <span class="pr${p === 0 ? " free" : ""}">${money(p)}</span>
+      </li>`;
+    }).join("");
+
+    setupDots();
+    renderFeatured();
+    restartTimer();
+
+    document.getElementById("prevFeat").onclick = () => shiftFeat(-1);
+    document.getElementById("nextFeat").onclick = () => shiftFeat(1);
+    document.getElementById("featDots").addEventListener("click", e => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      featIndex = +b.dataset.i;
+      renderFeatured();
+      restartTimer();
+    });
+    document.getElementById("carousel").addEventListener("mouseenter", () => clearInterval(featTimer));
+    document.getElementById("carousel").addEventListener("mouseleave", restartTimer);
+
+    document.getElementById("pills").addEventListener("click", e => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      document.querySelectorAll("#pills button").forEach(x => x.classList.toggle("on", x === b));
+      fillRow(document.getElementById("tabRow"), tabSets[b.dataset.tab]);
+    });
+
+    document.querySelectorAll(".row-arrow").forEach(btn => {
+      btn.onclick = () => {
+        const row = document.getElementById(btn.dataset.row);
+        row.scrollBy({ left: (+btn.dataset.dir) * 420, behavior: "smooth" });
+      };
+    });
+
+    const overlay = document.getElementById("overlay");
+    const toast = document.getElementById("toast");
+    function openGame(id) {
+      const g = byId[id];
+      if (!g) return;
+      document.getElementById("sp-title").textContent = g.title;
+      document.getElementById("sp-cat").textContent = g.tags[0];
+      const img = document.getElementById("sp-img");
+      img.src = src(g);
+      img.alt = g.title;
+      document.getElementById("sp-blurb").textContent = g.blurb;
+      document.getElementById("sp-tags").innerHTML = g.tags.map(t => `<span class="tag">${t}</span>`).join("");
+      document.getElementById("sp-rev").innerHTML =
+        `<span style="color:#8f98a0">Overall Reviews:</span> <span style="color:#66c0f4;font-weight:600">${g.review}</span>
+         <span style="color:#67707b"> (${g.pct}% of the ${g.count} user reviews)</span>
+         <div style="margin-top:6px;font-style:italic;color:#c7d5e0">“${g.quote}”</div>`;
+      const pEl = document.getElementById("sp-price");
+      if (g.discount) {
+        pEl.innerHTML = `<span class="was">${money(g.price)}</span> ${money(salePrice(g))}`;
+        pEl.classList.remove("free");
+      } else {
+        pEl.textContent = money(g.price === 0 ? 0 : g.price);
+        pEl.classList.toggle("free", g.price === 0);
+      }
+      document.getElementById("sp-buy-label").textContent =
+        g.price === 0 ? "Play " + g.title : "Buy " + g.title;
+      document.getElementById("btnCart").textContent = g.price === 0 ? "Play Now" : "Add to Cart";
+      overlay.classList.add("open");
+    }
+    function close() { overlay.classList.remove("open"); }
+    document.getElementById("close").onclick = close;
+    overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+    document.getElementById("btnCart").onclick = () =>
+      showToast(document.getElementById("btnCart").textContent === "Play Now" ? "Launching… (not really)" : "Added to cart (not really)");
+    document.getElementById("btnWish").onclick = () => showToast("Added to wishlist (not really)");
+
+    document.body.addEventListener("click", e => {
+      if (e.target.closest(".overlay") || e.target.closest(".car-btn") || e.target.closest(".row-arrow") || e.target.closest("#featDots") || e.target.closest(".pills") || e.target.closest(".store-search") || e.target.closest(".install-btn")) return;
+      const card = e.target.closest("[data-id]");
+      if (card) openGame(card.dataset.id);
+    });
+
+    const hover = document.getElementById("hoverinfo");
+    document.body.addEventListener("mouseover", e => {
+      const cap = e.target.closest(".capsule, .offer, .top-sellers li");
+      if (!cap) { hover.classList.remove("show"); return; }
+      const g = byId[cap.dataset.id];
+      if (!g) return;
+      hover.innerHTML = `<h5>${g.title}</h5>
+        <div class="h-rev">${g.review} (${g.pct}%)</div>
+        <div class="h-blurb">${g.blurb}</div>
+        <div class="h-tags">${g.tags.join(" • ")}</div>`;
+      hover.classList.add("show");
+    });
+    document.body.addEventListener("mousemove", e => {
+      if (!hover.classList.contains("show")) return;
+      const x = e.clientX + 18;
+      const y = e.clientY + 14;
+      hover.style.left = Math.min(x, window.innerWidth - 320) + "px";
+      hover.style.top = Math.min(y, window.innerHeight - 140) + "px";
+    });
+    document.body.addEventListener("mouseout", e => {
+      const cap = e.target.closest(".capsule, .offer, .top-sellers li");
+      if (cap && !cap.contains(e.relatedTarget)) hover.classList.remove("show");
+    });
+
+    document.getElementById("search").addEventListener("keydown", e => {
+      if (e.key !== "Enter") return;
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) return;
+      const g = games.find(x => x.title.toLowerCase().includes(q) || x.blurb.toLowerCase().includes(q) || x.tags.join(" ").toLowerCase().includes(q));
+      if (g) openGame(g.id);
+    });
+  </script>
+</body>
+</html>
