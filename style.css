@@ -40,6 +40,7 @@ a { color: var(--blue); text-decoration: none; }
 a:hover { color: var(--white); }
 button { font-family: inherit; }
 img { display: block; max-width: 100%; }
+.feat-art img, .capsule img, .offer img, .ts-art img, .sp-grid > img, .feat-thumbs img, .car-dots img, .friend img { max-width: none; }
 
 /* ========== GLOBAL HEADER ========== */
 .global-header {
@@ -278,12 +279,11 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center;
   position: absolute;
   inset: 0;
   opacity: 0;
   transition: opacity .35s ease;
-  transform: scale(1.32);
 }
 .feat-art img.show { opacity: 1; }
 .feat-info {
@@ -320,13 +320,9 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   filter: saturate(.9);
-  transform: scale(1.45);
 }
-.feat-thumbs span:nth-child(1) img { object-position: 20% 10%; }
-.feat-thumbs span:nth-child(2) img { object-position: 80% 40%; }
-.feat-thumbs span:nth-child(3) img { object-position: 50% 80%; }
-.feat-thumbs span:nth-child(4) img { object-position: 60% 30%; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .tag {
@@ -413,7 +409,7 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center;
 }
 .car-dots button.on {
   opacity: 1;
@@ -450,11 +446,11 @@ img { display: block; max-width: 100%; }
 .offer .banner.week { background: linear-gradient(90deg, #7a3e12, #c5802a); color: #ffe0a8; }
 .offer img {
   width: 100%;
-  height: 148px;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center;
   background: #000;
-  transform: scale(1.28);
 }
 .offer .cap {
   display: flex;
@@ -559,11 +555,11 @@ img { display: block; max-width: 100%; }
 .capsule:hover { outline: 1px solid var(--blue); }
 .capsule img {
   width: 100%;
-  height: 92px;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center;
   background: #000;
-  transform: scale(1.28);
 }
 .capsule .meta {
   padding: 6px 8px 8px;
@@ -589,9 +585,9 @@ img { display: block; max-width: 100%; }
 
 .row-arrow {
   position: absolute;
-  top: 28px;
+  top: 4px;
   width: 24px;
-  height: 92px;
+  height: calc(196px * 9 / 16);
   background: rgba(13,20,28,.72);
   border: none;
   color: #fff;
@@ -633,7 +629,8 @@ img { display: block; max-width: 100%; }
 }
 .ts-art {
   width: 140px;
-  height: 52px;
+  height: auto;
+  aspect-ratio: 16/9;
   overflow: hidden;
   background: #000;
   display: block;
@@ -642,8 +639,7 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
-  transform: scale(1.32);
+  object-position: center;
 }
 .top-sellers .nm {
   font-size: 13px;
@@ -733,8 +729,7 @@ img { display: block; max-width: 100%; }
 .friend img {
   width: 36px; height: 36px;
   object-fit: cover;
-  object-position: center 18%;
-  transform: scale(1.3);
+  object-position: center;
 }
 .friend .who { font-size: 12px; color: var(--blue); }
 .friend .what { font-size: 12px; color: var(--muted); line-height: 1.3; }
@@ -779,6 +774,7 @@ img { display: block; max-width: 100%; }
 
 .storepage {
   width: min(940px, 100%);
+  max-height: none;
   background: #1b2838;
   border: 1px solid #3d5a73;
   box-shadow: 0 24px 80px rgba(0,0,0,.7);
@@ -790,13 +786,20 @@ img { display: block; max-width: 100%; }
   to { transform: none; opacity: 1; }
 }
 .sp-top {
-  padding: 16px 20px 8px;
+  padding: 16px 48px 8px 20px;
   background: #16202d;
   display: flex;
   align-items: baseline;
   gap: 12px;
 }
-.sp-top h2 { font-size: 26px; font-weight: 300; color: #fff; }
+.sp-top h2 {
+  font-size: 26px;
+  font-weight: 300;
+  color: #fff;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  padding-right: 8px;
+}
 .sp-top .crumb { font-size: 12px; color: var(--blue); }
 .close {
   position: absolute;
@@ -815,15 +818,16 @@ img { display: block; max-width: 100%; }
 .sp-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  overflow: hidden;
+  overflow: visible;
+  align-items: start;
 }
 .sp-grid > img {
   width: 100%;
-  height: 360px;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center;
   background: #000;
-  transform: scale(1.28);
 }
 .sp-body {
   padding: 18px 20px 22px;
@@ -831,6 +835,7 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   gap: 10px;
   background: #16202d;
+  overflow: visible;
 }
 .sp-body .blurb { font-size: 14px; line-height: 1.5; color: var(--text); }
 .sp-body .rev { font-size: 13px; }
@@ -910,7 +915,7 @@ img { display: block; max-width: 100%; }
   .specials { grid-template-columns: 1fr 1fr; }
   .carousel-inner, .sp-grid { grid-template-columns: 1fr; }
   .carousel-inner, .feat-art, .feat-info { height: auto; min-height: 220px; }
-  .feat-art img { transform: none; position: relative; opacity: 1; min-height: 220px; }
+  .feat-art img { object-fit: cover; object-position: center; min-height: 220px; }
   .global-nav a { padding: 10px 8px 8px; letter-spacing: 1px; font-size: 12px; }
   .brand { font-size: 20px; letter-spacing: 2px; padding-right: 10px; }
   .car-btn.prev { left: 0; }
