@@ -31,7 +31,7 @@
         <span>Cart (0)</span>
         <span class="sep">|</span>
         <div class="user-menu">
-          <img src="covers/mikia-game.png?v=7" alt="" />
+          <img src="covers/mikia-game.png?v=8" alt="" />
           <span class="uname">mikia</span>
           <span class="caret">▼</span>
         </div>
@@ -105,6 +105,13 @@
           <span class="cta">Learn more</span>
         </div>
         <div class="side-box">
+          <h3>Free to Play</h3>
+          <div class="gift-art clown-art"><span>CLOWN DISPATCH</span></div>
+          <p>Sanbar Emergency Clown Dispatch</p>
+          <p style="color:#8f98a0;margin-top:4px;font-size:12px;">On-call clowns for Glendale. Balloon animals sold separately. Rated Mixed by people who wanted an actual emergency.</p>
+          <a class="cta" href="http://shawkatsanbar.com/">Visit the website</a>
+        </div>
+        <div class="side-box">
           <h3>Browse by category</h3>
           <div class="cats">
             <a href="#">Action</a>
@@ -119,28 +126,28 @@
         <div class="side-box">
           <h3>Recommended by Friends</h3>
           <div class="friend" data-id="jon-bullet-hell">
-            <img src="covers/jon-bullet-hell.png?v=7" alt="" loading="lazy" />
+            <img src="covers/jon-bullet-hell.png?v=8" alt="" loading="lazy" />
             <div>
               <div class="who">jon</div>
               <div class="what">recently played Some Bullshit Game Jon Likes</div>
             </div>
           </div>
           <div class="friend" data-id="nicole-is-playing">
-            <img src="covers/nicole-is-playing.png?v=7" alt="" loading="lazy" />
+            <img src="covers/nicole-is-playing.png?v=8" alt="" loading="lazy" />
             <div>
               <div class="who">nicole</div>
               <div class="what">recommends Nicole Is Playing This Probably</div>
             </div>
           </div>
           <div class="friend" data-id="mikia-game">
-            <img src="covers/mikia-game.png?v=7" alt="" loading="lazy" />
+            <img src="covers/mikia-game.png?v=8" alt="" loading="lazy" />
             <div>
               <div class="who">mikia</div>
               <div class="what">featured A Walk Through an Unnamed Ship</div>
             </div>
           </div>
           <div class="friend" data-id="guccis-big-adventure">
-            <img src="covers/guccis-big-adventure.png?v=7" alt="" loading="lazy" />
+            <img src="covers/guccis-big-adventure.png?v=8" alt="" loading="lazy" />
             <div>
               <div class="who">gucci</div>
               <div class="what">is a ball python, also a game now</div>
@@ -162,6 +169,8 @@
         <a href="#">Screan Subscriber Agreement</a>
         <a href="#">Refunds</a>
         <a href="#">Cookies</a>
+        <a href="http://tylerlofftus.com/">The Tyler Lofftus Show</a>
+        <a href="http://shawkatsanbar.com/">Sanbar Emergency Clown Dispatch</a>
       </div>
       <p class="disclaimer">Parody storefront. Not affiliated with Valve or Steam. This is Screan. Built for Mikia.</p>
     </div>
@@ -182,6 +191,7 @@
           <div class="tags" id="sp-tags"></div>
           <div class="rev" id="sp-rev"></div>
           <p class="blurb" id="sp-blurb"></p>
+          <p class="official-site" id="sp-site" hidden></p>
           <div class="buy-box">
             <div class="buy-label" id="sp-buy-label">Buy this game</div>
             <div class="buy-row">
@@ -273,7 +283,8 @@
         blurb: "It is a Brazilian flag.",
         price: 0.99, tags: ["Casual", "Indie", "Movie"],
         review: "Mixed", pct: 51, count: "774",
-        quote: "I thought there would be a movie. There is a flag."
+        quote: "I thought there would be a movie. There is a flag.",
+        site: "http://tylerlofftus.com/"
       },
       {
         id: "fallout-new-vegas-2", file: "fallout-new-vegas-2.png",
@@ -327,7 +338,7 @@
     ];
 
     const byId = Object.fromEntries(games.map(g => [g.id, g]));
-    const src = g => "covers/" + g.file + "?v=7";
+    const src = g => "covers/" + g.file + "?v=8";
     const money = n => n === 0 ? "Free to Play" : "$" + n.toFixed(2);
     const salePrice = g => g.discount ? +(g.price * (1 - g.discount.pct / 100)).toFixed(2) : g.price;
 
@@ -511,6 +522,14 @@
       img.src = src(g);
       img.alt = g.title;
       document.getElementById("sp-blurb").textContent = g.blurb;
+      const siteEl = document.getElementById("sp-site");
+      if (g.site) {
+        siteEl.innerHTML = `<a href="${g.site}">Official website</a>`;
+        siteEl.hidden = false;
+      } else {
+        siteEl.innerHTML = "";
+        siteEl.hidden = true;
+      }
       document.getElementById("sp-tags").innerHTML = g.tags.map(t => `<span class="tag">${t}</span>`).join("");
       document.getElementById("sp-rev").innerHTML =
         `<span style="color:#8f98a0">Overall Reviews:</span> <span style="color:#66c0f4;font-weight:600">${g.review}</span>

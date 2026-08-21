@@ -703,6 +703,9 @@ img { display: block; max-width: 100%; }
   opacity: .7;
 }
 .gift-art span { position: relative; z-index: 1; font-size: 15px; letter-spacing: 1px; }
+.clown-art {
+  background: linear-gradient(135deg, #4a1020 0%, #c43c3c 42%, #f2d04b 100%);
+}
 .side-box p { font-size: 13px; color: var(--text); line-height: 1.4; }
 .side-box .cta {
   display: inline-block;
@@ -714,6 +717,7 @@ img { display: block; max-width: 100%; }
   font-weight: 600;
   border-radius: 2px;
 }
+.side-box a.cta:hover { color: #fff; }
 
 .cats { display: flex; flex-direction: column; }
 .cats a {
@@ -852,6 +856,9 @@ img { display: block; max-width: 100%; }
   overflow: visible;
 }
 .sp-body .blurb { font-size: 14px; line-height: 1.5; color: var(--text); }
+.sp-body .official-site { font-size: 13px; margin: 0; }
+.sp-body .official-site a { color: var(--blue); }
+.sp-body .official-site a:hover { color: var(--white); }
 .sp-body .rev { font-size: 13px; }
 .buy-box {
   margin-top: auto;
