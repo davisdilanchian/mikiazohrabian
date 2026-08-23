@@ -389,7 +389,7 @@
     ];
 
     const byId = Object.fromEntries(games.map(g => [g.id, g]));
-    const src = g => "covers/" + g.file + "?v=9";
+    const src = g => "covers/" + g.file + "?v=10";
     const money = n => n === 0 ? "Free to Play" : "$" + n.toFixed(2);
     const salePrice = g => g.discount ? +(g.price * (1 - g.discount.pct / 100)).toFixed(2) : g.price;
 
