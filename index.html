@@ -31,7 +31,7 @@
         <span>Cart (0)</span>
         <span class="sep">|</span>
         <div class="user-menu">
-          <img src="covers/mikia-game.png?v=8" alt="" />
+          <img src="covers/mikia-game.png?v=9" alt="" />
           <span class="uname">mikia</span>
           <span class="caret">▼</span>
         </div>
@@ -126,28 +126,28 @@
         <div class="side-box">
           <h3>Recommended by Friends</h3>
           <div class="friend" data-id="jon-bullet-hell">
-            <img src="covers/jon-bullet-hell.png?v=8" alt="" loading="lazy" />
+            <img src="covers/jon-bullet-hell.png?v=9" alt="" loading="lazy" />
             <div>
               <div class="who">jon</div>
               <div class="what">recently played Some Bullshit Game Jon Likes</div>
             </div>
           </div>
           <div class="friend" data-id="nicole-is-playing">
-            <img src="covers/nicole-is-playing.png?v=8" alt="" loading="lazy" />
+            <img src="covers/nicole-is-playing.png?v=9" alt="" loading="lazy" />
             <div>
               <div class="who">nicole</div>
               <div class="what">recommends Nicole Is Playing This Probably</div>
             </div>
           </div>
           <div class="friend" data-id="mikia-game">
-            <img src="covers/mikia-game.png?v=8" alt="" loading="lazy" />
+            <img src="covers/mikia-game.png?v=9" alt="" loading="lazy" />
             <div>
               <div class="who">mikia</div>
               <div class="what">featured A Walk Through an Unnamed Ship</div>
             </div>
           </div>
           <div class="friend" data-id="guccis-big-adventure">
-            <img src="covers/guccis-big-adventure.png?v=8" alt="" loading="lazy" />
+            <img src="covers/guccis-big-adventure.png?v=9" alt="" loading="lazy" />
             <div>
               <div class="who">gucci</div>
               <div class="what">is a ball python, also a game now</div>
@@ -202,6 +202,7 @@
           </div>
         </div>
       </div>
+      <div class="sp-more" id="sp-more" hidden></div>
     </div>
   </div>
 
@@ -334,15 +335,67 @@
         price: 0, tags: ["Casual", "Puzzle", "Free to Play"],
         review: "Very Positive", pct: 87, count: "5,902",
         quote: "She will not stop scooping. There is no win condition. I am sticky."
+      },
+      {
+        id: "microtransaction-the-game", file: "microtransaction-the-game.png",
+        title: "microtransaction: the game",
+        blurb: "The shop is the game. There is no game. Every verb costs money.",
+        about: "Welcome to the future of play. microtransaction: the game is a revolutionary free-to-play experience in which the product is the checkout. There is no campaign, no level, and no verb that has not been generously unbundled. You may download the client at no charge. Starting costs $4.99. Jumping costs $1.99. The $12.99 Starter Pack contains 3% of the contents of the real Starter Pack, which is sold separately, as is the shop that sells it. Includes a Battle Pass for the Battle Pass, a currency that buys a currency, and a sad little guy you can almost unlock. Almost.",
+        features: [
+          "Base price $0.00. Then $4.99 to start. Then $1.99 to jump. Then the rest of your life.",
+          "Battle Pass for the Battle Pass. The track has a track.",
+          "$12.99 Starter Pack that is 3% of the real Starter Pack.",
+          "Every verb is a SKU. Looking left is $1.49. Existing is $2.99.",
+          "A playable character, locked, behind a paywall, behind another paywall."
+        ],
+        userReviews: [
+          { name: "wallet_empty", score: "1/10", hours: "87 hrs", text: "I spent $400 and still can't jump. The jump bundle was 80% off so I bought six. I still walk." },
+          { name: "honest_at_last", score: "10/10", hours: "12 hrs", text: "Finally a game honest enough to skip the game. I opened the shop and I won." },
+          { name: "pass_for_pass", score: "2/10", hours: "401 hrs", text: "Bought the Battle Pass so I could afford the Battle Pass. Support says this is working as intended." }
+        ],
+        reqs: {
+          min: "Any wallet. Shame. An internet connection that can reach a storefront. The ability to tap BUY.",
+          rec: "Second wallet. Parental controls disabled. A chair you can sit in while not playing. Optional: a child to blame."
+        },
+        price: 0, tags: ["Free to Play", "Casual", "Psychological Horror"],
+        review: "Mixed", pct: 41, count: "184,902",
+        quote: "I spent $400 and still can't jump."
+      },
+      {
+        id: "bazzarsthone", file: "bazzarsthone.png",
+        title: "BazzarSthone",
+        blurb: "You don't play cards. You manage the managers of the card-shop that auto-drafts for an auto-battler you last touched in 2019.",
+        about: "BazzarSthone is the last card game you will ever start. You do not play cards. You manage the managers of the card-shop that auto-drafts for an auto-battler you last touched in 2019. Palaces modify shops that modify packs that modify relics that modify the idle ticker that is, technically, the game. Synergies have synergies. The tutorial is fourteen hours and still does not explain the fourth currency. Your hero is a shopkeeper's shopkeeper. Somewhere under the UI there is a board. You are not expected to look at it. From the studio that asked: what if a hearth, but also a bazaar, but also you don't play.",
+        features: [
+          "Forty currencies. None of them are 'fun.'",
+          "Auto-battler plus deckbuilder plus gacha plus palaces plus a board you watch.",
+          "Relics that modify shops that modify packs that modify the idle ticker.",
+          "A 14-hour tutorial. Chapter 11 is about the shopkeeper's shopkeeper.",
+          "Synergies have synergies. Spreadsheet recommended, then ignored."
+        ],
+        userReviews: [
+          { name: "synergy_phd", score: "Spreadsheet / 10", hours: "10.0 hrs", text: "PalaceTax × PackWisp = +0.12 relic/sec IF Relic Relic is in shop AND Favor < 0 AND Season 40 pass is active. Shopkeeper II does not buff Shopkeeper II. I have a 40-tab sheet. I have not won a match. I have not played a match." },
+          { name: "thought_i_was_drafting", score: "1/10", hours: "63 hrs", text: "I thought I was drafting. I was watching a shop draft. The board resolved without me. I clapped." },
+          { name: "almost_got_it", score: "4/10", hours: "312 hrs", text: "Once you understand palace-to-relic-to-pack inheritance it's actually— no. It isn't. Refunded the refund, which costs shards." }
+        ],
+        reqs: {
+          min: "Dual-core, 8 GB RAM, a calendar, the patience to not click the board.",
+          rec: "Three monitors, spreadsheet software, a second life in which you play an actual card game."
+        },
+        price: 19.99, tags: ["Card Game", "Idle", "Auto Battler"],
+        review: "Mostly Negative", pct: 32, count: "41,008",
+        quote: "I made a 10-hour synergy spreadsheet and still lost to the shop."
       }
     ];
 
     const byId = Object.fromEntries(games.map(g => [g.id, g]));
-    const src = g => "covers/" + g.file + "?v=8";
+    const src = g => "covers/" + g.file + "?v=9";
     const money = n => n === 0 ? "Free to Play" : "$" + n.toFixed(2);
     const salePrice = g => g.discount ? +(g.price * (1 - g.discount.pct / 100)).toFixed(2) : g.price;
 
     const featuredIds = [
+      "bazzarsthone",
+      "microtransaction-the-game",
       "mikia-game",
       "dark-souls-worse-edition",
       "nicole-is-playing",
@@ -351,12 +404,12 @@
     ];
     const specialIds = ["dustin-game", "james", "dan-game", "british-tv-show-showdown"];
     const topIds = [
-      "mikia-game", "nicole-is-playing", "the-game-that-makes-you-trans",
-      "dark-souls-worse-edition", "fallout-new-vegas-2", "machiavelli-dating-sim",
-      "dan-game", "james", "guccis-big-adventure", "dustin-game"
+      "bazzarsthone", "microtransaction-the-game", "mikia-game", "nicole-is-playing",
+      "the-game-that-makes-you-trans", "dark-souls-worse-edition", "fallout-new-vegas-2",
+      "machiavelli-dating-sim", "dan-game", "james"
     ];
     const under10Ids = games.filter(g => salePrice(g) < 10).map(g => g.id);
-    const upcomingIds = ["armenia-world-5", "british-tv-show-showdown", "tyler-the-movie-the-game", "dustin-game", "machiavelli-dating-sim"];
+    const upcomingIds = ["bazzarsthone", "microtransaction-the-game", "armenia-world-5", "british-tv-show-showdown", "tyler-the-movie-the-game"];
 
     const tabSets = {
       trending: games.map(g => g.id),
@@ -546,6 +599,19 @@
       document.getElementById("sp-buy-label").textContent =
         g.price === 0 ? "Play " + g.title : "Buy " + g.title;
       document.getElementById("btnCart").textContent = g.price === 0 ? "Play Now" : "Add to Cart";
+      const more = document.getElementById("sp-more");
+      if (g.about || g.features || g.userReviews || g.reqs) {
+        let extra = "";
+        if (g.about) extra += `<div><h4>About this game</h4><p>${g.about}</p></div>`;
+        if (g.features) extra += `<div><h4>Features</h4><ul>${g.features.map(f => `<li>${f}</li>`).join("")}</ul></div>`;
+        if (g.userReviews) extra += `<div><h4>User reviews</h4>${g.userReviews.map(r => `<div class="sp-review"><div class="who">${r.name} <span class="stars">${r.score}</span></div><div class="hrs">${r.hours} on record</div><p>${r.text}</p></div>`).join("")}</div>`;
+        if (g.reqs) extra += `<div><h4>System requirements</h4><div class="sp-reqs"><div><strong>Minimum</strong><p>${g.reqs.min}</p></div><div><strong>Recommended</strong><p>${g.reqs.rec}</p></div></div></div>`;
+        more.innerHTML = extra;
+        more.hidden = false;
+      } else {
+        more.innerHTML = "";
+        more.hidden = true;
+      }
       overlay.classList.add("open");
     }
     function close() { overlay.classList.remove("open"); }

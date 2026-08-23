@@ -983,3 +983,48 @@ img { display: block; max-width: 100%; }
   .sp-top { padding: 14px 44px 8px 14px; }
   .close { top: 6px; right: 10px; }
 }
+
+.sp-more {
+  padding: 16px 20px 28px;
+  background: #1b2838;
+  border-top: 1px solid #2a475e;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: visible;
+}
+.sp-more[hidden] { display: none; }
+.sp-more h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.sp-more p { font-size: 13px; line-height: 1.55; color: var(--text); }
+.sp-more ul {
+  margin: 0 0 0 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.sp-review {
+  background: #16202d;
+  border: 1px solid #2a475e;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.sp-review .who { color: var(--blue); font-size: 12px; font-weight: 600; }
+.sp-review .stars { color: var(--price); font-weight: 600; }
+.sp-review .hrs { color: var(--faint); font-size: 11px; margin: 2px 0 6px; }
+.sp-review p { color: var(--text); }
+.sp-reqs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.sp-reqs strong { color: #fff; font-size: 12px; display: block; margin-bottom: 4px; }
+@media (max-width: 700px) {
+  .sp-reqs { grid-template-columns: 1fr; }
+}
