@@ -706,6 +706,9 @@ img { display: block; max-width: 100%; }
 .clown-art {
   background: linear-gradient(135deg, #4a1020 0%, #c43c3c 42%, #f2d04b 100%);
 }
+.tyler-art {
+  background: linear-gradient(135deg, #1a3a1a 0%, #2f6b32 50%, #f1c40f 100%);
+}
 .side-box p { font-size: 13px; color: var(--text); line-height: 1.4; }
 .side-box .cta {
   display: inline-block;
