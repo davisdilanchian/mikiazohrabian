@@ -320,6 +320,15 @@
         quote: "He asked if I feared more to be loved or to be feared. I said yes."
       },
       {
+        id: "dandle", file: "dandle.png",
+        title: "Dandle",
+        blurb: "A 3D word puzzle where words have weight. Build letter-cube chains and shove the floppy structure into the goal.",
+        price: 0, tags: ["Puzzle", "Word Game", "Physics"],
+        review: "Overwhelmingly Positive", pct: 96, count: "2,184",
+        quote: "Wordcels and shape-rotators can work together.",
+        site: "https://dandle.online/"
+      },
+      {
         id: "mikia-game", file: "mikia-game.png",
         title: "A Walk Through an Unnamed Ship",
         blurb: "An obscure 1-bit walking simulator. You walk the decks. You look. You write a name in a ledger. Almost nobody has heard of this.",
@@ -397,11 +406,12 @@
     ];
 
     const byId = Object.fromEntries(games.map(g => [g.id, g]));
-    const src = g => "covers/" + g.file + "?v=10";
+    const src = g => "covers/" + g.file + "?v=11";
     const money = n => n === 0 ? "Free to Play" : "$" + n.toFixed(2);
     const salePrice = g => g.discount ? +(g.price * (1 - g.discount.pct / 100)).toFixed(2) : g.price;
 
     const featuredIds = [
+      "dandle",
       "bazzarsthone",
       "microtransaction-the-game",
       "mikia-game",
@@ -410,7 +420,7 @@
       "fallout-new-vegas-2",
       "the-game-that-makes-you-trans"
     ];
-    const specialIds = ["dustin-game", "james", "dan-game", "british-tv-show-showdown"];
+    const specialIds = ["dandle", "dustin-game", "james", "dan-game", "british-tv-show-showdown"];
     const topIds = [
       "bazzarsthone", "microtransaction-the-game", "mikia-game", "nicole-is-playing",
       "the-game-that-makes-you-trans", "dark-souls-worse-edition", "fallout-new-vegas-2",
@@ -620,6 +630,7 @@
         more.innerHTML = "";
         more.hidden = true;
       }
+      overlay.dataset.id = g.id;
       overlay.classList.add("open");
     }
     function close() { overlay.classList.remove("open"); }
@@ -632,8 +643,11 @@
       toast.classList.add("show");
       setTimeout(() => toast.classList.remove("show"), 1800);
     }
-    document.getElementById("btnCart").onclick = () =>
+    document.getElementById("btnCart").onclick = () => {
+      const g = byId[overlay.dataset.id];
+      if (g && g.site) { window.location.href = g.site; return; }
       showToast(document.getElementById("btnCart").textContent === "Play Now" ? "Launching… (not really)" : "Added to cart (not really)");
+    };
     document.getElementById("btnWish").onclick = () => showToast("Added to wishlist (not really)");
 
     document.body.addEventListener("click", e => {
