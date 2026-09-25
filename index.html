@@ -526,9 +526,10 @@
 
     document.getElementById("specials").innerHTML = specialIds.map(id => {
       const g = byId[id];
-      const week = g.discount && g.discount.label.indexOf("WEEKEND") !== -1;
+      const label = g.discount ? g.discount.label : (g.price === 0 ? "FREE TO PLAY" : "FEATURED");
+      const week = label.indexOf("WEEKEND") !== -1;
       return `<article class="offer" data-id="${g.id}">
-        <div class="banner${week ? " week" : ""}">${g.discount.label}</div>
+        <div class="banner${week ? " week" : ""}">${label}</div>
         <img src="${src(g)}" alt="${g.title}" loading="lazy" />
         <div class="cap">
           <span class="t">${g.title}</span>
